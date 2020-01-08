@@ -1,0 +1,81 @@
+package oops;
+
+import java.util.Scanner;
+
+public class J2 {
+	
+	int Ecode[]=new int[10];			
+	String Ename[]=new String[10];
+	int Basic_salary[]=new int[10];		
+	float[] Hra,Da,Ta,Gross_salary,It,Pf,Net_salary=new float[10];	
+
+	
+	void Input() {
+			 Scanner sc=new Scanner(System.in);
+			 for(int i=0;i<10;i++) {
+			 System.out.println("Enter Employee code");
+			 Ecode[i]=sc.nextInt();
+			 }
+			 for(int i=0;i<10;i++) {
+				 System.out.println("Enter Employee name");
+				 Ename[i]=sc.next();
+				 }
+			 for(int i=0;i<10;i++) {
+				 System.out.println("Enter Employee basic salary");
+				Basic_salary[i]=sc.nextInt();
+			 }
+			 sc.close();
+// function to input the values for ecode, ename and basic salary
+
+		 }
+	
+		 void calc()	{
+			 for(int i=0;i<10;i++) {
+			    Hra[i]=Basic_salary[i]*(0.4f);
+				Da[i] =(0.2f)*Basic_salary[i];
+				Ta[i]=(0.1f)*Basic_salary[i];
+				Gross_salary[i]=Basic_salary[i]+Hra[i]+Da[i]+Ta[i];
+				It[i]=(0.20f)*Gross_salary[i];
+				Pf[i]=(0.1f)*Gross_salary[i];
+				Net_salary[i]=Gross_salary[i]*(It[i] + Pf[i]);
+				 }
+	
+		 }
+		 void disp()	{
+			 for(int i=0;i<10;i++) { 
+			 System.out.println("Employee code"+Ecode[i]);
+			 System.out.println("Employee name"+Ename[i]);
+			 System.out.println("Employee Basic salary"+Basic_salary[i]);
+			 
+			 }
+	
+		 }
+
+
+
+}
+
+
+
+
+
+
+package oops;
+
+public class J2call {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+	J2 a=new J2();
+	a.Input();
+	a.calc();
+	a.disp();
+
+	}
+
+}
+
+
+
